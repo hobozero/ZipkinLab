@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipkinLab.Web", "ZipkinLab.Web\ZipkinLab.Web.csproj", "{302AF1A2-AD79-441E-B966-9EBE4B26A068}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipkinLab.Channel.Api", "ZipkinLab.Channel.Api\ZipkinLab.Channel.Api.csproj", "{6E008720-51AC-4FA8-A9C6-0C07C3A7651A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipkinLab.Core.Api", "ZipkinLab.Core.Api\ZipkinLab.Core.Api.csproj", "{F98A18F5-A227-4EFE-8CEC-97A426462C63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZipkinLab.Dto", "ZipkinLab.Dto\ZipkinLab.Dto.csproj", "{DD2671EF-4CB7-45A3-B662-941417CEF687}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{302AF1A2-AD79-441E-B966-9EBE4B26A068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302AF1A2-AD79-441E-B966-9EBE4B26A068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302AF1A2-AD79-441E-B966-9EBE4B26A068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302AF1A2-AD79-441E-B966-9EBE4B26A068}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E008720-51AC-4FA8-A9C6-0C07C3A7651A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E008720-51AC-4FA8-A9C6-0C07C3A7651A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E008720-51AC-4FA8-A9C6-0C07C3A7651A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E008720-51AC-4FA8-A9C6-0C07C3A7651A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F98A18F5-A227-4EFE-8CEC-97A426462C63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F98A18F5-A227-4EFE-8CEC-97A426462C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F98A18F5-A227-4EFE-8CEC-97A426462C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F98A18F5-A227-4EFE-8CEC-97A426462C63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD2671EF-4CB7-45A3-B662-941417CEF687}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD2671EF-4CB7-45A3-B662-941417CEF687}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD2671EF-4CB7-45A3-B662-941417CEF687}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD2671EF-4CB7-45A3-B662-941417CEF687}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
