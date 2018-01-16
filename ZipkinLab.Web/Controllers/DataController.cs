@@ -8,6 +8,7 @@ using System.Web.Http;
 using System.Web.Http.Routing;
 using Medidata.ZipkinTracer.Core;
 using Medidata.ZipkinTracer.Core.Handlers;
+using Medidata.ZipkinTracer.Models;
 using Microsoft.Owin;
 using Newtonsoft.Json;
 using RestSharp;
@@ -38,15 +39,24 @@ namespace ZipkinLab.Web.Controllers
                 }
             }
 
+            using (var httpClient = new HttpClient(new ZipkinMessageHandler(zipkinClient)))
+            {
+                var sharedResponse = httpClient.GetAsync($"http://zipkinweb.localmachine.altsrc.net/shared/api/shared/3").Result;
 
-            ////restSharp implementation
-            //var client = new RestClient("http://ZipkinWeb.localmachine.altsrc.net/channelapi");
-            //var request = new RestRequest("account/{id}", Method.GET);
-            //request.AddUrlSegment("id", "999");
-            //acct = client.Execute<AccountDto>(request).Data;
+                if (sharedResponse.IsSuccessStatusCode)
+                {
+                    var sharedContent = sharedResponse.Content.ReadAsStringAsync().Result;
+                }
+            }
+            
+
 
 
             var dataDto = new DataDto(acct.Customer.FirstName, acct.Customer.LastName, acct.AccountId);
+
+            var span = new Span();
+            //span.Id = ???
+            zipkinClient.RecordBinary<object>(span, "dataDto", dataDto);
 
             return dataDto;
         }
@@ -56,7 +66,7 @@ namespace ZipkinLab.Web.Controllers
             
             var config = new ZipkinConfig // you can use Dependency Injection to get the same config across your app.
             {
-                Domain = (IOwinRequest request) => new Uri("http://zipkinweb.localmachine.altsrc.net"),
+                Domain = (IOwinRequest request) => new Uri("http://web"),
                 ZipkinBaseUri = new Uri("http://localhost:9411"),
                 SpanProcessorBatchSize = 10,
                 SampleRate = 0.5

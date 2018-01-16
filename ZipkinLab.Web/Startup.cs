@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
+using AltSource.Logging.Structured;
+using AltSource.Logging.Structured.Config;
 using Microsoft.Owin;
 using Owin;
 
@@ -11,7 +13,7 @@ namespace ZipkinLab.Web
     {
         public void Configuration(IAppBuilder app)
         {
-            
+
         }
     }
 }

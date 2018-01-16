@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Web;
 using System.Web.Http;
+using Medidata.ZipkinTracer.Core;
+using Medidata.ZipkinTracer.Core.Handlers;
+using Newtonsoft.Json;
 using RestSharp;
 using ZipkinLab.Dto;
 
@@ -17,15 +21,22 @@ namespace ZipkinLab.Channel.Api.Controllers
         [Route("{accountId}")]
         public AccountDto Get(int accountId)
         {
-            var client = new RestClient("http://ZipkinWeb.localmachine.altsrc.net/coreapi");
-            // client.Authenticator = new HttpBasicAuthenticator(username, password);
+            CustomerDto customer = null;
 
-            var request = new RestRequest("customer/{id}", Method.GET);
-            request.AddUrlSegment("id", "123");
-            request.AddHeader("header", "value");
-            var customer = client.Execute<CustomerDto>(request);
+            using (var httpClient = new HttpClient(new ZipkinMessageHandler(ZipkinStartup.GetClient(HttpContext.Current.GetOwinContext()))))
+            {
+                var response = httpClient.GetAsync($"http://ZipkinWeb.localmachine.altsrc.net/coreapi/customer/{123}").Result;
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = response.Content.ReadAsStringAsync().Result;
+                    customer = JsonConvert.DeserializeObject<CustomerDto>(content);
+                }
 
-            var acctDto = new AccountDto(accountId, customer.Data);
+                var sharedResponse =
+                    httpClient.GetAsync($"http://zipkinweb.localmachine.altsrc.net/shared/api/shared/5").Result;
+            }
+            
+            var acctDto = new AccountDto(accountId, customer);
 
             return acctDto;
         }

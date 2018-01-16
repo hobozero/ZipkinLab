@@ -43,8 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Medidata.ZipkinTracer.Core, Version=3.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Medidata.ZipkinTracer.Core.3.2.0\lib\net45\Medidata.ZipkinTracer.Core.dll</HintPath>
+    <Reference Include="AltSource.Logging.Structured, Version=2.2.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AltSource.Logging.Structured.2.2.1.13\lib\net45\AltSource.Logging.Structured.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="AltSource.Logging.Structured.Config, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\AltSource.Logging.Structured.Config.2.2.1.7\lib\net45\AltSource.Logging.Structured.Config.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -62,6 +66,10 @@
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.1.2\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
@@ -139,7 +147,9 @@
     <Content Include="webpack.common.js" />
     <Content Include="webpack.dev.js" />
     <Content Include="webpack.prod.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_Layout_template.cshtml" />
     <Content Include="Views\Zipkin\Index.cshtml" />
   </ItemGroup>
@@ -171,6 +181,10 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Medidata.ZipkinTracerModule\src\Medidata.ZipkinTracer.Core\Medidata.ZipkinTracer.Core.csproj">
+      <Project>{c3e2c468-5319-45a9-8c23-1e0382919612}</Project>
+      <Name>Medidata.ZipkinTracer.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZipkinLab.Dto\ZipkinLab.Dto.csproj">
       <Project>{dd2671ef-4cb7-45a3-b662-941417cef687}</Project>
       <Name>ZipkinLab.Dto</Name>
