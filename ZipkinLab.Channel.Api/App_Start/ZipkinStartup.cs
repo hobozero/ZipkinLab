@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Medidata.ZipkinTracer.Core.Middlewares;
-using Medidata.ZipkinTracer.Core;
+using CCI.ZipkinTracer.Core.Middlewares;
+using CCI.ZipkinTracer.Core;
 using Microsoft.Owin;
 using Microsoft.Owin.Logging;
 using Owin;
-using Zipkin.Logging;
 
 namespace ZipkinLab.Channel.Api
 {

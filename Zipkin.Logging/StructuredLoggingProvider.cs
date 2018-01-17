@@ -8,12 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using AltSource.Logging.Structured;
 using AltSource.Logging.Structured.Config;
-using Medidata.ZipkinTracer.Core.Logging;
+using Zipkin.Logging.Logging;
 using Zipkin.Logging.Logging.LogProviders;
 
 namespace Zipkin.Logging
 {
-    class StructuredLoggingProvider: Medidata.ZipkinTracer.Core.Logging.LogProviders.LogProviderBase
+    class StructuredLoggingProvider: CCI.ZipkinTracer.Core.Logging.LogProviders.LogProviderBase
     {
         private static StructuredLibLogLogger _logger;
 

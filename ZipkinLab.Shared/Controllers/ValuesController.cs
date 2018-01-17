@@ -6,7 +6,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Web;
 using System.Web.Http;
-using Medidata.ZipkinTracer.Core.Handlers;
+using CCI.ZipkinTracer.Core.Handlers;
 using Newtonsoft.Json;
 
 namespace ZipkinLab.Shared.Controllers

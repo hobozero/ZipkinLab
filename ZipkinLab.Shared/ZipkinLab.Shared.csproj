@@ -229,9 +229,9 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Medidata.ZipkinTracerModule\src\Medidata.ZipkinTracer.Core\Medidata.ZipkinTracer.Core.csproj">
+    <ProjectReference Include="..\CCI.ZipkinTracerModule\src\Medidata.ZipkinTracer.Core\CCI.ZipkinTracer.Core.csproj">
       <Project>{c3e2c468-5319-45a9-8c23-1e0382919612}</Project>
-      <Name>Medidata.ZipkinTracer.Core</Name>
+      <Name>CCI.ZipkinTracer.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

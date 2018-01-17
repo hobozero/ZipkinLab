@@ -5,15 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Web;
 using System.Web.Http;
-using System.Web.Http.Routing;
-using Medidata.ZipkinTracer.Core;
-using Medidata.ZipkinTracer.Core.Handlers;
-using Medidata.ZipkinTracer.Models;
 using Microsoft.Owin;
 using Newtonsoft.Json;
 using RestSharp;
 using ZipkinLab.Dto;
 using ZipkinLab.Web.Models.DTO;
+using CCI.ZipkinTracer.Core.Handlers;
+using CCI.ZipkinTracer.Core;
+using CCI.ZipkinTracer.Core.Models;
 
 namespace ZipkinLab.Web.Controllers
 {
@@ -30,7 +29,7 @@ namespace ZipkinLab.Web.Controllers
 
             using (var httpClient = new HttpClient(new ZipkinMessageHandler(zipkinClient)))
             {
-                var response = httpClient.GetAsync("http://ZipkinWeb.localmachine.altsrc.net/channelapi/account/9999").Result;
+                var response = httpClient.GetAsync("http://channel.ZipkinLab.localmachine.altsrc.net/account/9999").Result;
                 
                 if (response.IsSuccessStatusCode)
                 {
@@ -41,7 +40,7 @@ namespace ZipkinLab.Web.Controllers
 
             using (var httpClient = new HttpClient(new ZipkinMessageHandler(zipkinClient)))
             {
-                var sharedResponse = httpClient.GetAsync($"http://zipkinweb.localmachine.altsrc.net/shared/api/shared/3").Result;
+                var sharedResponse = httpClient.GetAsync($"http://shared.ZipkinLab.localmachine.altsrc.net/api/shared/3").Result;
 
                 if (sharedResponse.IsSuccessStatusCode)
                 {
@@ -56,7 +55,7 @@ namespace ZipkinLab.Web.Controllers
 
             var span = new Span();
             //span.Id = ???
-            zipkinClient.RecordBinary<object>(span, "dataDto", dataDto);
+            zipkinClient.RecordBinary<object>(span, "correlationId", Guid.NewGuid().ToString("N"));
 
             return dataDto;
         }

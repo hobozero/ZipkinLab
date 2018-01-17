@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
-using Medidata.ZipkinTracer.Core.Logging;
+using CCI.ZipkinTracer.Core.Logging;
 
 
 namespace Zipkin.Logging

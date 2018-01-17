@@ -1,0 +1,12 @@
+src/*/bin/*
+src/*/obj/*
+tests/*/bin/*
+tests/*/obj/*
+src/*/lib/*
+*.user
+*.suo
+*.pdb
+
+TestResults/
+packages/
+.vs/*/*

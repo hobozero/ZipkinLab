@@ -181,9 +181,9 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Medidata.ZipkinTracerModule\src\Medidata.ZipkinTracer.Core\Medidata.ZipkinTracer.Core.csproj">
+    <ProjectReference Include="..\CCI.ZipkinTracerModule\src\Medidata.ZipkinTracer.Core\CCI.ZipkinTracer.Core.csproj">
       <Project>{c3e2c468-5319-45a9-8c23-1e0382919612}</Project>
-      <Name>Medidata.ZipkinTracer.Core</Name>
+      <Name>CCI.ZipkinTracer.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZipkinLab.Dto\ZipkinLab.Dto.csproj">
       <Project>{dd2671ef-4cb7-45a3-b662-941417cef687}</Project>

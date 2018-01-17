@@ -1,6 +1,6 @@
 ﻿using System;
-using Medidata.ZipkinTracer.Core;
-using Medidata.ZipkinTracer.Core.Middlewares;
+using CCI.ZipkinTracer.Core;
+using CCI.ZipkinTracer.Core.Middlewares;
 using Microsoft.Owin;
 using Owin;
 

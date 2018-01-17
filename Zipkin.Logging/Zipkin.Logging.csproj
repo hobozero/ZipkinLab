@@ -70,12 +70,6 @@
     <Compile Include="StructuredLoggingProvider.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Medidata.ZipkinTracerModule\src\Medidata.ZipkinTracer.Core\Medidata.ZipkinTracer.Core.csproj">
-      <Project>{c3e2c468-5319-45a9-8c23-1e0382919612}</Project>
-      <Name>Medidata.ZipkinTracer.Core</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
